@@ -22,7 +22,7 @@ def name_to_number(name):     # Converts name to number
     elif name == "scissors":
         name = 4
     else:
-        name = "Error: invalid name"
+        name = -1
     return name   
 
 def number_to_name(number): # Converts number to name
@@ -37,7 +37,7 @@ def number_to_name(number): # Converts number to name
     elif number == 4:
         name = "scissors"
     else:
-        name = "Error: Invalid number"
+        print "Error: Invalid number"
     return name
 
 import random 
@@ -45,6 +45,11 @@ import random
 def rpsls(player_choice):
     print "\nPlayer chooses " + player_choice
     player_number = name_to_number(player_choice)
+    
+    if player_number < 0:
+        print "Error: invalid name"
+        return
+    
     comp_number = random.randrange(0, 5)
     comp_choice = number_to_name(comp_number)
     print "Computer chooses " + comp_choice
@@ -64,6 +69,7 @@ rpsls("Spock")
 rpsls("paper")
 rpsls("lizard")
 rpsls("scissors")
+rpsls("papr")
 
 
 
