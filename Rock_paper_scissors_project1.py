@@ -10,6 +10,8 @@
 # 3 - lizard
 # 4 - scissors
 
+import random
+
 def name_to_number(name):     # Converts name to number 
     if name == "rock":
         name = 0
@@ -39,8 +41,6 @@ def number_to_name(number): # Converts number to name
     else:
         print "Error: Invalid number"
     return name
-
-import random 
 
 def rpsls(player_choice):
     print "\nPlayer chooses " + player_choice
