@@ -12,10 +12,11 @@
 
 import random
 
-def name_to_number(name):     # Converts name to number 
+def name_to_number(name):     # Converts name to number
+    name = name.lower()
     if name == "rock":
         name = 0
-    elif name == "Spock":
+    elif name == "spock":
         name = 1
     elif name == "paper":
         name = 2
@@ -31,7 +32,7 @@ def number_to_name(number): # Converts number to name
     if number == 0:
         name = "rock"
     elif number == 1:
-        name = "Spock"
+        name = "spock"
     elif number == 2:
         name = "paper"
     elif number == 3:
@@ -47,7 +48,7 @@ def rpsls(player_choice):
     player_number = name_to_number(player_choice)
     
     if player_number < 0:
-        print "Error: invalid name"
+        print "Error: invalid name\n"
         return
     
     comp_number = random.randrange(0, 5)
@@ -56,20 +57,23 @@ def rpsls(player_choice):
     difference = (comp_number - player_number) % 5
     
     if difference == 1 or difference == 2:
-        print "Computer wins!"
+        print "Computer wins!\n"
     elif difference == 0:
-        print "Player and computer tie!"
+        print "Player and computer tie!\n"
     else:
-        print "Player wins!"
+        print "Player wins!\n"
     
 # tests
+while True:
+    var = raw_input("Please enter your choice: ")
+    rpsls(var)
 
-rpsls("rock")
-rpsls("Spock")
-rpsls("paper")
-rpsls("lizard")
-rpsls("scissors")
-rpsls("papr")
+#rpsls("rock")
+#rpsls("Spock")
+#rpsls("paper")
+#rpsls("lizard")
+#rpsls("scissors")
+#rpsls("papr")
 
 
 
